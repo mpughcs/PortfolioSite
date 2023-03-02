@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fluid Layout Demo</title>
+    <link href="style.css" rel="stylesheet" />
+    <style>
+        html,
+body {
+  margin: 0;
+  height: 100%;
+  /* --dark-blue: rgb(24, 41, 41); */
+  background: var(--dark-blue);
+  /* font-family: sans-serif; */
+  color: var(--dark-blue);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  background: rgb(20, 255, 90);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+      /* take up all available space */
+      main {
+        height: 60%;
+        width: 100%;
+      }
+
+      /* Constrain to a size */
+      main {
+        width: min(600px, 100%);
+      }
+
+      /* Use fluid typography 
+        minimum bound, ideal size, maximum bound
+      */
+      main {
+        font-size: clamp(1rem, 10vw, 2rem);
+      }
+      .display{
+        max-width: clamp(300px, 30%, 1000px);
+      }
+
+      /* 
+      Change properties that cannot be 
+      fluid with a media query
+      */
+      @media (max-width: 400px) {
+        main {
+          border-radius: 2px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="display">
+    <img src="sundaycomputers.jpg" alt="Sunday Computers" />    
+
+
+    </div>
+    <!-- <img src="sundaycomputers.jpg" alt="Sunday Computers" />     -->
+  </body>
+</html>
