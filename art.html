@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fluid Layout Demo</title>
+    <script src="https://kit.fontawesome.com/b52fd21c14.js" crossorigin="anonymous"></script>
+
+    <link href="style.css" rel="stylesheet" />
+    <style>
+    
+      body{
+        padding:20px;
+      }
+      .flex-container{
+        display: flex;
+        /* flex-direction: column; */
+        padding: 0;
+        flex-wrap: wrap;
+        gap: 10px;
+        /* flex-direction: row; */
+        /* justify-content: flex-start; */
+        align-items: flex-start;
+        /* background-color: #f1f1f1;    */
+        
+      }
+      
+      .header {
+        justify-content: flex-start;
+        align-items: baseline;
+        margin-bottom: 20px;
+        /* padding: 100px; */
+        text-decoration: underline;
+        max-width: max-content;
+
+        
+      }
+   
+    .header p{
+      margin-bottom:-10px;
+    }
+   
+    
+ 
+
+li{
+  display:inline;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  transform: scale(1.01);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  height: 90px;
+  
+}
+.card {
+    /* width: clamp(300px, 20%, 300px);
+     */
+    margin:0;
+    flex:1;
+    flex-basis: 350px;
+    max-height: min-content; 
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 5px 5px 0 0;
+    transition: 0.3s; 
+    /* width: clamp(10%,20%,100%); */
+
+    
+}
+
+.card h4{
+    margin:0;
+}
+
+a:hover{
+    color:rgb(0, 24, 237);
+}
+.portrait{
+  /* flex:2.5; */
+}
+.landscape{
+  min-width: 60%;
+
+}
+  
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <div class="flex-container header">
+        <h1 class="flex-element">Design</h1>
+        <nav class="flex-element">
+          <ul >
+            <li><a href="index.html">Home</a></li>
+            <li><a href="code.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="flex-container about">
+      <p>
+        I have always loved visual art and design. Here is some of my work from over the years.
+      </p>
+    </div>
+    
+    
+    <div class="flex-container">
+          <div class="card">
+            <img src="images/danceinsideout.jpeg" alt="Notation" style="width:100%">
+            <div class="container">
+                <h4>Notation</h4> 
+                <p> this is some text about this piece of art 
+                </p> 
+            </div>
+        </div>
+
+        <div class="card logo">
+          <img src="images/logo.jpg" alt="logo" style="width:100%">
+          <div class="container">
+              <h4><b>Project 1</b></h4> 
+              <p>Some text</p> 
+          </div>
+        </div>
+
+        <div class="card drawing">
+          <img src="images/drawing.jpg" alt="Drawing" style="width:100%">
+          <div class="container">
+              <h4>landscape</h4> 
+              <p></p> 
+          </div>
+        </div>
+        <div class="card landscape">
+          <img src="images/landscape.jpg" alt="landscape" style="width:100%">
+          <div class="container">
+              <h4>landscape</h4> 
+              <p></p> 
+              </div>
+        </div>
+
+        <div class="card portrait">
+          <img src="images/portrait.jpg" alt="portrait" style="width:100%">
+          <div class="container">
+              <h4>landscape</h4> 
+              <p></p> 
+          </div>
+        </div>
+        
+       
+    
+      
+      
+        
+        
+        <!-- </a> -->
+        
+        
+        
+    </div>
+     
+    </body>
+</html>

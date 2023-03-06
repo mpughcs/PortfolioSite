@@ -3,47 +3,167 @@
 
 <head>
   	<meta charset="utf-8">
-  	<title>Sunday Mourners</title>
+  	<title>Portfolio Site</title>
   	<meta name="author" content="">
   	<meta name="description" content="">
   	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/b52fd21c14.js" crossorigin="anonymous"></script>
 
-  	<link href="style.css" rel="stylesheet">
+  	<link href="style.css" rel="stylesheet">    
+    <style>
+        /* Color Theme Swatches in Hex */
+        .To-Teal-1 { color: #45214A; }
+        .To-Teal-2 { color: #323050; }
+        .To-Teal-3 { color: #21445B; }
+        .To-Teal-4 { color: #1A6566; }
+        .To-Teal-5 { color: #8db654; }
+
+
+        h1{
+            color: var(--teal5);
+        }
+
+        
+
+        body{
+            --da: #323050;
+            --box2: #21445B;
+            --box3: yellow;
+            --teal1: #21264a;
+            --teal2: #5D8A66;
+            --teal3: #21445B;
+            --teal4: #1A6566;
+            --teal5: #5D8A66;
+
+        }
+        .headshot{
+            /* clip-path: circle(); */
+            border:none;
+        
+            width:350px;
+            padding-bottom: 13px;
+            
+            border-bottom: 55px solid var(--teal1);
+        }
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-start;
+            
+            gap:10px;
+            /* flex-wrap:nowrap; */
+            /* max-height:min-content; */
+
+            flex-wrap: wrap;    
+            /* height: 100vh; */
+        }
+
+        .portrait{
+            width: clamp(250px, 25%,600px);
+            /* height: 20%; */
+            margin:0;
+            /* background-color: rgb(255, 192, 192); */
+        }
+        .flex-element{
+            /* width: clamp(100px, 150px, 15%); */
+            height: 20%;
+            margin:0;
+            /* background-color: rgb(255, 192, 192); */
+        }
+       
+        .portrait{
+
+            flex:1;  
+            /* justify-self: center;  */
+           /* place column inline with nav */
+            
+        }
+  
+        .name{
+            font-size: 65px;
+            /* font-size: 190; */
+            font-weight: 700;
+            width: 150px;
+            align-self: flex-end;
+            
+            /* background-color: rgb(255, 192, 192); */
+        }
+        .icon-nav{
+            
+            align-items: flex-end;
+            justify-content: space-around ;
+            width: 400px;
+            margin:auto;
+            margin-top: 25px;
+            height: 10%;
+        }
+        .box2{
+            top:130px;
+            width:7rem;
+            left:57%;
+            
+            height:7rem;
+            background-color:var(--teal2);
+            position: absolute;
+        }
+       
+        a:hover{
+            transition: all 0.1s;
+        }
+    
+       
+     
+      
+    </style>
 </head>
 
 <body>
-    <h1>Sunday Mourners</h1>
-    <a href="listen.html">Listen</a>
-    <a href="">About</a>
-    <a href="">Live</a>
-    <a href="">Blog</a>
-    <a href="contact.html">Contact</a>
-    <a href="">Store</a>
+    <!-- <div class="box2"></div> -->
+    <!-- <div class="box2"></div> -->
+    <div class="box3"></div>
 
 
-    <p class="text-left">This is a css framework I developed to mirror the style of punk rock album art and magazines from the 1970s</p>
-    
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum architecto quibusdam atque accusamus consequatur fugiat temporibus odio minima incidunt ducimus praesentium pariatur error, labore excepturi blanditiis neque harum tempore iusto?</p>
-    <!-- <button>Normal</button> -->
-   
 
-    <div class="test">
-    <img  src="television.webp" alt="television">
-    
+    <div class="flex-container">
+        
+        <img src="images/IMG_1132 (1).jpg" alt="headshot" class="headshot flex-element">
+        <h1 class="flex-element name">Max Pugh</h1>
+
     </div>
-    
-    <!-- <a href="">Link1</a>
-    <a href="">Link1</a>
-    <a href="">Link1</a> -->
-    <button class="success">Success</button>
-    <button class="disabled">Disabled</button>
-    <button class="error">Error</button>    
-    <button>Normal</button>
+    <div class="flex-container nav">
+
+    </div>
+    <div class="flex-container icon-nav">
+       
+
+        
+        <a class="flex-element" href="code.html">
+            <i class="fa-solid fa-code"></i>
+        </a>
+        <a class="flex-element" href="">
+            <i class="fa-solid fa-guitar"></i>
+        </a>
+        <a class="flex-element" href="art.html">
+            <i class="fa-solid fa-paintbrush"></i>
+        </a>
+        
+        <a class="flex-element" href="">
+            <i class="fa-solid fa-file-arrow-down"></i>
+        </a>
+        
+        <!-- <div class="box2 .To-Teal-1"></div>
 
 
-    
+
+    </div>
+ 
   
-	
+    
+       
+      
+ 
+    
 </body>
   
 </html> 
