@@ -11,7 +11,12 @@
     <style>
     
       body{
-        padding:20px;
+        padding:0px;
+        /* color: */
+        color:rgb(202, 209, 216);
+        background-color: rgb(14,17,22);
+
+
       }
       .flex-container{
         display: flex;
@@ -43,9 +48,14 @@
    
     
  
+    a{
+      color:rgb(202, 209, 216);
 
+    }
 li{
   display:inline;
+        color:rgb(202, 209, 216);
+
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -56,6 +66,7 @@ li{
 
 /* Add some padding inside the card container */
 .container {
+  /* background-color: blue; */
   padding: 2px 16px;
   height: 90px;
   
@@ -79,15 +90,41 @@ li{
 .card h4{
     margin:0;
 }
+nav{
+  /* width: 20px; */
+}
 
 a:hover{
     color:rgb(0, 24, 237);
 }
-.portrait{
+.graphicdesign{
   /* flex:2.5; */
 }
 .landscape{
   min-width: 60%;
+
+}
+@media screen and (max-width: 600px) {
+  .flex-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0px;
+    width: 100%;
+   
+  }
+  .header{
+    margin:auto;
+    /* flex-direction: column; */
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+  li{
+    display:block;  
+    /* align-self: start; */
+    text-align: center;
+  }
 
 }
   
@@ -149,7 +186,7 @@ a:hover{
               </div>
         </div>
 
-        <div class="card portrait">
+        <div class="card graphicdesign">
           <img src="images/portrait.jpg" alt="portrait" style="width:100%">
           <div class="container">
               <h4>landscape</h4> 

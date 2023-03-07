@@ -9,7 +9,9 @@
 
     <link href="style.css" rel="stylesheet" />
     <style>
-      
+      html{
+        padding:0;
+      }
     
       body{
         padding:20px;
@@ -17,9 +19,15 @@
         color:rgb(202, 209, 216);
         
       }
-      h1{
-        font-size: 5rem;
+      p{
+        font-size: clamp(1.0rem, 1.5vw, 2rem);
       }
+      h1{
+        font-size: 4vw;
+        color:rgb(108	164	248);	
+
+      }
+
       .flex-container{
         display: flex;
         padding: 0;
@@ -33,6 +41,11 @@
         /* background-color: #f1f1f1;    */
         
       }
+      h2{
+        margin: 0;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color:rgb(108	164	248);	
+      }
       .card:hover {
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
         transform: scale(1.01);
@@ -45,25 +58,24 @@
         /* padding: 100px; */
         text-decoration: underline;
       }
-      .header .flex-element{
-      max-width: max-content;
-      padding: 0;
-    }
+     
       .flex-element{
             flex: 1;
-            /* max-width: 200px; */
+            max-width: max-content; 
             /* padding: 10px; */
             /* text-align: center; */
             /* font-size: 30px; */
             
       }
-      .flex-element img{
-        max-width: clamp(300px, 30%, 1000px);
-        /* max-width: 500px; */
-      }
+      
       .more{
-        justify-content: flex-start;
+        justify-content: space-evenly;
         margin-bottom: 2px;
+      }
+      .more .card{
+        /* flex:2; */
+        flex-basis: 200px;
+        width: 100%;
       }
     
  
@@ -78,9 +90,10 @@
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
+  height: 90px;
 }
 .card {
-    /* width: clamp(300px, 20%, 300px); */
+    /* width: clam (300px, 20%, 300px); */
     flex:1;
     flex-basis: 350px;
     border: 2px solid #ccc;
@@ -99,7 +112,8 @@ img{
     object-fit: cover;
 }
 a:hover{
-    color:blue;
+  color:rgb(108	164	248);	
+    
 }
 .header{
   justify-content: flex-start;
@@ -129,20 +143,19 @@ li{
   align-items: center;
 }
 .tstack a{
-  font-size: 10rem;
+  font-size: 12vw;
   /* color:rgb(202, 209, 216);   */
   max-width: min-content;
+
 }
+
 svg{
   
   /* make svg bigger */
-  height: 145px;
+  /* height: 145px; */
+  width: 12vw;
 
-  width: 145px;
-  /* fill:rgb(202, 209, 216); */
-
-  /* fill:rgb(202, 209, 216); */
-  /* max-width: 100px; */
+  
 }
 svg:hover{
   fill:navy;
@@ -172,21 +185,138 @@ svg:hover{
 
 }
 img{
-  /* width:clapm(300px, 20%, 10px); */
-  width: 500px;
+  /* max-width:clamp(300px, 50%, 1000px); */
+  /* width: 500px; s */
+  flex:1;
 
 }
 
+.intro-container{
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis:auto;
+
+  align-items: flex-start;
+  align-content: space-evenly;
+  justify-self: space-evenly;
+
+  margin:40px;  
+ 
+  }
+.intro-container .flex-element:nth-of-type(1){
+  /* max-width: max-content; */
+  /* max-height: max-content; */
+  padding: 0;
+  /* width: 500px; */
+  /* background-color: aquamarine; */
+  /* make breakpoint */
+  /* width: 70%; */
+  min-width: 400px;
+
+  /* width:clamp(400px, 40%, 600px);   */
+  /* flex:1; */
+  /* min-width: 500px;s */
+
+}
+.intro-container .flex-container:nth-of-type(2) .flex-element{
+  /* width: 300px; */
+
+}
+img.intro-container{
+  /* max-width: max-content; */
+  /* max-height: max-content; */
+  
+  padding: 0;
+  /* margin-top: 100px; */
+  /* width: 500px; */
+  /* background-color: aquamarine; */
+  /* width: 70%; */
+  width:clamp(300px, 40%, 600px);
+  /* min-width: none;  */
+  /* align-self: center; */
+  /* flex:1; */
+  /* margin-inline: 60px; */
+
+}
+.intro-container .flex-element{
+  margin:0;
+  flex:1;
+  flex-basis: 350px;
+  max-height: min-content; 
+  min-width: 400px
+    /* border: 2px solid #ccc; */
+    /* box-shadow: 0 2px 4px 0 rgba(255,255,255,0.2);  */
+    /* border-radius: 5px 5px 0 0; */
+    transition: 0.3s; 
+  /* object-fit: cover;  */
+}
+.about{
+  max-width: 500px;
+  /* width: 500px; */
+  /* width: 80%; */
+  /* width:clamp(300px, 20%, 600px);/// */
+  flex:1;
+}
+div.flex-element.about p{
+  max-width: 550px;
+}
+.image{
+  /* align-self: center; */
+  /* background-color: antiquewhite; */
+  /* min-width: 50%; */
+  max-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* vertical-align: bottom; */
+
+}
+.flex-element{
+  max-width: fit-content  ;
+}
+@media screen and (max-width: 720px) {
+  .intro-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0px;
+   width: 100%;
+  }
+  html{
+    padding: 10px
+  }
+  
+  .header{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* padding: 100px; */
+    text-decoration: underline;
+  }
+  .intro-container .flex-element:nth-of-type(1){
+    min-width: 300px;
+  }
+  .intro-container .flex-element:nth-of-type(1) h2:nth-of-type(2){
+    text-align: right;
+  }
+
+
+
+}
+ 
 
 
 
 
 
-    </style>
+</style>
+
   </head>
   <body>
     <div class="flex-container header">
-      <h1 class="flex-element">Notation App</h1>
+      <h1 class="flex-element">Notation.rs</h1>
       <nav class="flex-element">
         <ul >
           <li><a href="index.html">Home</a></li>
@@ -195,7 +325,25 @@ img{
         </ul>
       </nav>
     </div>
+    <div class="flex-container intro-container">
+      <div class="flex-element about">
+        <h2>Notation </h2>
+        <p>Notation is a desktop application for music creation with accessability in mind. Inspired by my own experiences with 
+          music production, I wanted to create a tool that would allow me to create music easily without needing to be familiar with large and cumbersome composition programs or well versed in tradition notation.
+        </p>
+        <h2 class="">How it works </h2>
+        <p class="">Notation is a desktop application for music creation with accessability in mind. Inspired by my own experiences with 
+          music production, I wanted to create a tool that would allow me to create music easily without needing to be familiar with large and cumbersome composition programs or well versed in tradition notation.
+        </p>
         
+        
+      </div>
+
+      <img class="flex-element" src="images/cassette.avif">
+      
+    </div>
+      
+    
       
 
 
@@ -214,18 +362,19 @@ img{
     </div>
       
   </div>
-    <div class="flex-container more">
+    <div class="flex-container">
         <h5 class="flex-element">More projects</h5>
     </div>
     
-    <div class="flex-container">
+    <div class="flex-container more">
         <div class="card">
             <img src="images/notation.png" alt="Notation" style="width:100%">
             <div class="container">
-                <h4>Notation<a href="https://github.com/mpughcs/CafRunner"><i class="fa-solid fa-link"></i></a></h4> 
+                <h4>Notation<a href="https://github.com/mpughcs/Notation"><i class="fa-solid fa-link"></i></a></h4> 
                 <p>Notation is a music application I am actively working on using Rust, Tauri, and python. The app is designed to help individuals
                     to help individuals with dyslexia and other learning disabilities compose music using a visual representation of music notation.
                 </p> 
+                
             </div>
         </div>
       
