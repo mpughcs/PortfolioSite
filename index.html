@@ -1,174 +1,595 @@
-<!DOCTYPE html> <!-- proper HTML5 doctype -->
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  	<meta charset="utf-8">
-  	<title>Portfolio Site</title>
-  	<meta name="author" content="">
-  	<meta name="description" content="">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fluid Layout Demo</title>
     <script src="https://kit.fontawesome.com/b52fd21c14.js" crossorigin="anonymous"></script>
 
-  	<link href="style.css" rel="stylesheet">    
+    <link href="style.css" rel="stylesheet" />
     <style>
-        /* Color Theme Swatches in Hex */
-        .To-Teal-1 { color: #45214A; }
-        .To-Teal-2 { color: #323050; }
-        .To-Teal-3 { color: #21445B; }
-        .To-Teal-4 { color: #1A6566; }
-        .To-Teal-5 { color: #8db654; }
+      @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap');
+      html, body{
+        padding:0;
+        /* --offwhite: (rgb(202, 209, 216)); */
+        --offwhite: rgb(202, 209, 216);
+        --background: rgb(14,17,22);
+        overflow-x: hidden;
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        overflow-x: hidden; 
 
-
-        h1{
-            color: var(--teal5);
-        }
-
-        
-
-        body{
-            --da: #323050;
-            --box2: #21445B;
-            --box3: yellow;
-            --teal1: #21264a;
-            --teal2: #5D8A66;
-            --teal3: #21445B;
-            --teal4: #1A6566;
-            --teal5: #5D8A66;
-            background-image: url('https://lh3.googleusercontent.com/bkzbakY6yhRf9pHXG3_8WP-6YqkMhb-G86TzRVsyxCqzoGMUmLWFMnZuwiG8tZoXRgTv7UAabfsOzAjJiSnLUDNB9HmjI4vuFC6j51Ht1xGfVmgBId4Q5hEyWwwruFv3koWOhuYXE3dvrnkRa_uGcvdnobDPKVNHibIndXc1WpYkB0X_o7DFYSHmoeSh1l48WCJdwGSsprxn8ZwiNN5A4rLMsvlGqvpRCbzBKjE8LyGWuRiITqGRYqQ8OKOX3EzY7gnuHcdbkghP4sbao8LtYUsOqeYVJplSOaWBiJdJxufe8i8cVz1u8dL4LK30jFZt2nhGns7lfjnUvOR7dHAXsNzcK1VLXDHZDhda7XXgjgcLEF7XahXWgJ3JO2_9LdbdN-MwZN-jI0CSDQocjDdqXm9RzetfYBhWWcJTy6OaOoUWsYM5W_BVG1JR3YxGnV-DDEnh1H3Zz0_1MxmE7hIoPj6GOvvLQ5OasZ360q1JwnMLmxHteriJdQbGmX6z5UiLNVqVqEKoGyLh1d4M-vKHCFYhF4FZVfKdJcUfWJiAO5lQNUBkS4pcbYzgedYB_HUnOkF3F77QlJxKU0EMyyHDtaG16q1S7ztyDw_4P2IeFWK_e7Neg-dURUZtAX4Eg5kxiYqj5e4wToQWnlAtVQL4i3Z00DYVkslmeVcIY7yTyN5gTYxHIr1jjaxtsEPFLm0Oopd_sjKJrj2_gTHbyJc0d9W_74GP73lIrIcDTFUOG2k_y0KNkNtbbw2dWLxNB6RAvjc0dmlLupf4N5USwAficOhOL7XKJ-W0Tu488Nlstqd_VVDHUmAJhSuykxiSEv_6XGkQBRBgumo2dsJ3Jh9Sg4UYmVnd0hMEJCVwhZ0J343yYj1EzoyPoSPXcNX4u3DTC4OXPH9cOb68cQNWF_6d1Hk_zRy4S01YeRBgQLg2w-cRg1SymZ1JB38rVQ9fMEJlYcMALT8WnmyK--fRuq-vWQM=w2152-h1614-no?authuser=0');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 100% 100%;
-
-
-        }
-        .headshot{
-            /* clip-path: circle(); */
-            border:none;
-        
-            width:350px;
-            padding-bottom: 13px;
-            
-            border-bottom: 55px solid var(--teal1);
-        }
-        .flex-container {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: flex-start;
-            
-            gap:10px;
-            /* flex-wrap:nowrap; */
-            /* max-height:min-content; */
-
-            flex-wrap: wrap;    
-            /* height: 100vh; */
-        }
-
-        .portrait{
-            width: clamp(250px, 25%,600px);
-            /* height: 20%; */
-            margin:0;
-            /* background-color: rgb(255, 192, 192); */
-        }
-        .flex-element{
-            /* width: clamp(100px, 150px, 15%); */
-            height: 20%;
-            margin:0;
-            /* background-color: rgb(255, 192, 192); */
-        }
-       
-        .portrait{
-
-            flex:1;  
-            /* justify-self: center;  */
-           /* place column inline with nav */
-            
-        }
-  
-        .name{
-            font-size: 65px;
-            /* font-size: 190; */
-            font-weight: 700;
-            width: 150px;
-            align-self: flex-end;
-            
-            /* background-color: rgb(255, 192, 192); */
-        }
-        .icon-nav{
-            
-            align-items: flex-end;
-            justify-content: space-around ;
-            width: 400px;
-            margin:auto;
-            margin-top: 25px;
-            height: 10%;
-        }
-        .box2{
-            top:130px;
-            width:7rem;
-            left:57%;
-            
-            height:7rem;
-            background-color:var(--teal2);
-            position: absolute;
-        }
-       
-        a:hover{
-            transition: all 0.1s;
-        }
+      }
     
-       
+      body{
+        padding:0px;
+        background-color:var(--background);
+        color:var(--offwhite)
+        
+      }
+      p{
+        font-size: clamp(1.0rem, 1.5vw, 2rem);
+      }
+      a {
+        /* font-size: clamp(1.0rem, 1.5vw, 2rem); */
+        padding: 0;
+      }
+      span a{
+        font-size: clamp(1.0rem, 1.5vw, 2rem);
+        margin:0;
+      }
+      h1{
+        font-family: 'Inconsolata', monospace;
+        font-size: 4vw;
+        color:rgb(108	164	248);	
+
+      }
+
+      .flex-container{
+        display: flex;
+        padding: 10px;
+        flex-wrap: wrap;
+        gap: 10px;
+        flex-basis: 300px;
+        margin-top:-10px;
+        /* flex-direction: row; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* background-color: #f1f1f1;    */
+        
+      }
+      h2{
+        margin: 0;
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        color:rgb(108	164	248);	
+      }
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        transform: scale(1.01);
+}
+      .header{
+        justify-content: flex-start;
+        align-items: baseline;
+        align-items: fle;
+        margin-bottom: 20px;
+        /* padding: 100px; */
+        text-decoration: underline;
+      }
      
+      .flex-element{
+            flex: 1;
+            max-width: max-content; 
+            /* padding: 10px; */
+            /* text-align: center; */
+            /* font-size: 30px; */
+            
+      }
       
-    </style>
-</head>
+      .more{
+        justify-content: space-evenly;
+        margin-bottom: 2px;
+      }
+      .more .card{
+        /* flex:2; */
+        flex-basis: 200px;
+        width: 100%;
+      }
+    
+ 
 
-<body>
-    <!-- <div class="box2"></div> -->
-    <!-- <div class="box2"></div> -->
-    <div class="box3"></div>
+
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+  padding: 2px 16px;
+  height: 90px;
+}
+.card {
+    /* width: clam (300px, 20%, 300px); */
+    flex:1;
+    flex-basis: 350px;
+    border: 2px solid #ccc;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    border-radius: 5px 5px 0 0;
+    transition: 0.1s;
+    /* max-width: clamp(100px,300px, 100%); */
+    max-width: 450px;
+    
+}
+.card h4{
+    margin:0;
+}
+img{
+    /* height: 300px; */
+    object-fit: cover; 
+}
+a:hover{
+  color:rgb(108	164	248);	
+    
+}
+.header{
+  justify-content: flex-start;
+        align-items: baseline;
+        align-items: fle;
+        margin-bottom: 20px;
+        /* padding: 100px; */
+        text-decoration: underline;
+        
+}
+a{
+  color:rgb(202, 209, 216);
+
+}
+li{
+  color:rgb(202, 209, 216);
+  display: inline;
+}
+.power{
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tstack{
+  justify-content: center;
+  align-items: center;
+}
+.tstack a{
+  font-size: 12vw;
+  /* color:rgb(202, 209, 216);   */
+  max-width: min-content;
+
+}
+
+svg{
+  
+  /* make svg bigger */
+  /* height: 145px; */
+  width: 12vw;
+
+  
+}
+svg:hover{
+  fill: rgb(108	164	248);
+  transform: scale(1.01);
+}
+.intro-container{
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  
+}
+.intro-container .flex-element:nth-of-type(1){
+  max-width: max-content;
+  max-height: max-content;
+  padding: 0;
+  flex:1;
+}
+.intro-container .flex-element:nth-of-type(2){
+  /* max-width: max-content; */
+  /* max-height: max-content; */
+  padding: 0;
+  /* width: 500px; */
+
+  /* width:clamp(300px, 20%, 600px);   */
+  flex:1;
+
+}
+img{
+  /* max-width:clamp(300px, 50%, 1000px); */
+  width: 500px;  
+  flex:1;
+
+}
+
+.intro-container{
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis:auto;
+
+  align-items: flex-start;
+  align-content: space-evenly;
+  justify-self: space-evenly;
+
+  margin:40px;  
+ 
+  }
+.intro-container .flex-element:nth-of-type(1){
+  /* max-width: max-content; */
+  /* max-height: max-content; */
+  padding: 0;
+  /* width: 500px; */
+  /* background-color: aquamarine; */
+  /* make breakpoint */
+  /* width: 70%; */
+  min-width: 400px;
+
+  /* width:clamp(400px, 40%, 600px);   */
+  /* flex:1; */
+  /* min-width: 500px;s */
+
+}
+.intro-container .flex-container:nth-of-type(2) .flex-element{
+  /* width: 300px; */
+
+}
+img.intro-container{
+  /* max-width: max-content; */
+  /* max-height: max-content; */
+  
+  padding: 0;
+  /* margin-top: 100px; */
+  /* width: 500px; */
+  /* background-color: aquamarine; */
+  /* width: 70%; */
+  width:clamp(300px, 40%, 500px);
+  /* min-width: none;  */
+  /* align-self: center; */
+  /* flex:1; */
+  /* margin-inline: 60px; */
+
+}
+.intro-container .flex-element{
+  margin:0;
+  flex:1;
+  flex-basis: 350px;
+  max-height: min-content; 
+  min-width: 400px;
+    /* border: 2px solid #ccc; */
+    /* box-shadow: 0 2px 4px 0 rgba(255,255,255,0.2);  */
+    /* border-radius: 5px 5px 0 0; */
+    transition: 0.3s; 
+  /* object-fit: cover;  */
+}
+.about{
+  max-width: 500px;
+  /* width: 500px; */
+  /* width: 80%; */
+  /* width:clamp(300px, 20%, 600px);/// */
+  flex:1;
+}
+div.flex-element.about p{
+  max-width: 550px;
+}
+.image{
+  /* align-self: center; */
+  /* background-color: antiquewhite; */
+  /* min-width: 50%; */
+  max-height: 100%;
+  min-width: 100%;
+  width: 100%;
+  object-fit: cover;
+  /* vertical-align: bottom; */
+
+}
+.flex-element{
+  max-width: fit-content  ;
+}
+@media screen and (max-width: 720px) {
+  .intro-container{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0px;
+   width: 100%;
+  }
+  html{
+    padding: 10px;
+  }
+  
+  .header{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    /* padding: 100px; */
+    /* text-decoration: underline; */
+  }
+  .intro-container .flex-element:nth-of-type(1){
+    min-width: 300px;
+  }
+  .intro-container .flex-element:nth-of-type(1) h2:nth-of-type(2){
+    text-align: right;
+  }
+  
+
+
+}
+ 
+
+.splash{
+  /* display: flex; */
+    /* width: 100%; */
+    /* max-width: 100vw; */
+    /* max-height: 95%; */
+    background-image: url("images/mourners.jpeg");
+   
+    height: 800px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: relative;
+
+  }
+  .splash .flex-container{
+    justify-content: flex-start;
+    align-items: baseline;
+    
+      
+    }
+  .invisible{
+    display: none;
+  }
+
+  .greeting{
+    font-size: clamp(4vw, 7vw, 10vw);
+  }
+  .flex-element h2 + p{
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .aboutme{
+    padding-top: 20px;
+    margin: 20px;
+    justify-content:flex-start ;
+  }
+  .aboutme p{
+    width: 50%;
+    min-width: 300px;
+    justify-self: flex-start;
+  }
+  .aboutme .flex-element{
+    flex:1;
+  }
+  .aboutme h2{
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    
+  }
+  .card p{
+    margin: 0;
+    font-size: small;
+  }
+ 
+  a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+ .aboutme i{
+    font-size: 1.5rem;
+ }
+ .icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+ }
+ .icons a{
+  flex:1;
+ }
+ i:hover{
+    color:rgb(108	164	248);	
+    
+ }
+ path:hover{
+  fill: rgb(108	164	248);
+ }
+ .headshot{
+  height: 400px;
+ }
+ @media screen and (max-width: 720px) {
+      .splash .flex-container{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+        /* flex-flow: column-reverse; */
+      }
+      .hello{
+        margin: 0;
+        padding:0;
+      }
+     
+      .splash{
+        background-image: none;
+        height: min-content;
+      }
+      .invisible{
+        display: flex;
+        width: 95%;
+        /* move this item to top of flexbox */
+        order: -1;
+
+      }
+      .aboutme{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        flex-flow: column-reverse;
+        padding:0;
+      }
+      .aboutme p{
+        width: 98%;
+        /* min-width: 500px; */
+        margin:auto;
+        /* justify-self: flex-start; */
+      }
+      .aboutme .flex-container{
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .headshot{
+        height: 500px;
+      }
+    }
+ 
 
 
 
+</style>
+
+  </head>
+  <body>
+
+    <div class="splash"> 
+      <!-- <img src="images/mourners.jpeg" alt="mourners">   -->
+      <div class="flex-container hello">
+        <h1 class="greeting flex-element">I'm Max Pugh</h1>
+        <p class="flex-element">Software developer, musician and creator </p>
+        <img class="invisible flex-element" src="images/mourners.jpeg" alt="mourners">  
+
+      </div>
+  
+    </div>
+    <div class="aboutme flex-container">
+      <div class="flex-element">
+        <!-- <h2 class="text-right">Get in touch.</h2> -->
+        <div class="flex-container icons">
+          <a title="Instagram" class="" href="https://www.instagram.com/goodjobmax/?hl=en">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a title="mpughcs On Github" href="https://github.com/mpughcs">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a title="Max Pugh on LinkedIn" href="https://www.linkedin.com/in/max-pugh/">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a class="My designs" href="art.html"> 
+            <i class="fa-solid fa-paint-brush"></i>
+          </a>
+          
+          <a class="My Resume" href="https://drive.google.com/file/d/1YM0OAAamY2Tt-6s2LgCgSNJfVSv_tCdE/view?usp=sharing">
+              <i class="fa-solid fa-file-arrow-down"></i>
+          </a>
+         
+        </div>
+      </div>
+      <img class="flex-element headshot" src="images/portrait.jpg">
+
+      <div class="flex-element">
+        <h2 class="">About me.</h2>
+        <p class="">I'm a software developer and musician from Saint Louis, Missouri, and currently based out of Los Angeles CA. I am enthusiastic about learning many areas of development and enjoy combining my passions of music, technology and design to create new and interesting things to share with others. </p>
+        <p>Right now, I am finishing my bachelors degree in Computer Science at Chapman University and am on track to graduate in Winter 2023.</p>
+      </div>
+      
+      
+        
+       
+    
+        
+
+      
+    </div>
+
+    
+    
+    <div class="flex-container header">
+      <h1 class="flex-element">Notation.rs</h1>
+      
+    </div>
+    <div class="flex-container intro-container">
+      <div class="flex-element about">
+        <h2>Notation </h2>
+        <p>Notation is a desktop application for music creation with accessability in mind. Inspired by my own experiences with 
+          music production, I wanted to create a tool that would allow me to create music easily without needing to be familiar with large and cumbersome composition programs or well versed in tradition notation.
+        </p>
+        <h2 class="">How it works </h2>
+        <p class="">
+          Under the hood, Notation extends and adds functionality a rust library called <span><a href="https://github.com/ozankasikci/rust-music-theory">rust-music-theory</a> </span>to create an object-oriented way to interface with music programatically.
+          The command line prototype generates a custom musical language that is then parsed and interpreted by the program. This allows for a simple and intuitive way to create music without needing to know how to read music notation by naming notes and chords in a way that is familiar to anyone who has ever played an instrument.
+        </p>
+        
+        
+      </div>
+
+      <img class="flex-element" src="images/cassette.png" alt="Cassette">
+      
+    </div>
+      
+    
+      
+
+
+
+
+    <div class="flex-container power">  
+    <h2>Powered By</h2>
+
+    </div>
+    <div class="flex-container tstack">
+      <a class="flex-element"><i class="fa-brands fa-rust"></i></a>
+      <a class="flex-element"><i class="fa-brands fa-python"></i></a>
+      <a class="flex-element"><i class="fa-brands fa-react"></i></a>
+      <a><svg style="color: white" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Tauri</title><path d="M15.657 17.282a8.7339 8.7339 0 0 0 3.0125-1.2251 8.728 8.728 0 0 0 3.2216-3.7452 8.7232 8.7232 0 0 0 .6717-4.8932 8.7247 8.7247 0 0 0-2.0931-4.474C19.3375 1.6857 17.8833.7753 16.264.3225a8.7358 8.7358 0 0 0-4.941.07 8.7318 8.7318 0 0 0-4.1117 2.7393 8.726 8.726 0 0 0-1.6336 2.9933 10.1908 10.1908 0 0 1 3.3484-.972 6.1356 6.1356 0 0 1 3.1666-2.2827 6.1387 6.1387 0 0 1 3.4721-.0492 6.1365 6.1365 0 0 1 2.9427 1.8425 6.1326 6.1326 0 0 1 1.4709 3.1439 6.1305 6.1305 0 0 1-.4721 3.4384 6.133 6.133 0 0 1-2.2638 2.6317 6.1312 6.1312 0 0 1-1.3123.6409c.0303.2471.046.4987.046.754a6.1166 6.1166 0 0 1-.3372 2.0094Zm-1.727-6.2691c1.263 0 2.2868-1.0234 2.2868-2.2857 0-1.2624-1.0238-2.2857-2.2868-2.2857s-2.2868 1.0233-2.2868 2.2857c0 1.2623 1.0238 2.2857 2.2868 2.2857ZM8.3665 6.7132a8.7342 8.7342 0 0 0-3.0365 1.23 8.7287 8.7287 0 0 0-3.2215 3.745 8.7235 8.7235 0 0 0-.6718 4.8932A8.7255 8.7255 0 0 0 3.53 21.0555a8.7318 8.7318 0 0 0 4.1877 2.6219 8.7364 8.7364 0 0 0 4.941-.0698 8.7326 8.7326 0 0 0 4.1117-2.7394 8.7258 8.7258 0 0 0 1.6363-3.0021 10.1905 10.1905 0 0 1-3.3497.9789 6.1569 6.1569 0 0 1-.2787.3596 6.1352 6.1352 0 0 1-2.8893 1.925 6.139 6.139 0 0 1-3.4721.0492 6.1363 6.1363 0 0 1-2.9427-1.8425 6.1317 6.1317 0 0 1-1.4709-3.1439 6.13 6.13 0 0 1 .472-3.4385 6.1338 6.1338 0 0 1 2.2639-2.6317 6.1372 6.1372 0 0 1 1.2865-.6318 6.1961 6.1961 0 0 1-.035-.6592c0-.7444.1327-1.458.376-2.118Zm1.6998 6.2738c-1.263 0-2.2868 1.0234-2.2868 2.2858 0 1.2623 1.0239 2.2856 2.2868 2.2856 1.263 0 2.2868-1.0233 2.2868-2.2856 0-1.2624-1.0238-2.2858-2.2868-2.2858Z" fill="rgb(202, 209, 216)"></path></svg></a>
+      
+    </div>
+      
+  </div>
     <div class="flex-container">
-        
-        <img src="images/IMG_1132 (1).jpg" alt="headshot" class="headshot flex-element">
-        <h1 class="flex-element name">Max Pugh</h1>
-
+        <h5 class="flex-element">More projects</h5>
     </div>
-    <div class="flex-container nav">
-
-    </div>
-    <div class="flex-container icon-nav">
-       
-
-        
-        <a class="flex-element" href="code.html">
-            <i class="fa-solid fa-code"></i>
-        </a>
-        <a class="flex-element" href="">
-            <i class="fa-solid fa-guitar"></i>
-        </a>
-        <a class="flex-element" href="art.html">
-            <i class="fa-solid fa-paintbrush"></i>
-        </a>
-        
-        <a class="flex-element" href="">
-            <i class="fa-solid fa-file-arrow-down"></i>
-        </a>
-        
-        <!-- <div class="box2 .To-Teal-1"></div>
-
-
-
-    </div>
- 
-  
     
-       
+    <div class="flex-container more">
+        <div class="card">
+            <img src="images/notation.png" alt="Notation" style="width:100%">
+            <div class="container">
+                <h4>Notation CLI<a href="https://github.com/mpughcs/Notation"><i class="fa-solid fa-link"></i></a></h4> 
+                <p>Notation is a music application I am actively working on using Rust, Tauri, and python. 
+                </p> 
+                
+            </div>
+        </div>
       
- 
+      
+        <div class="card">
+            <img src="images/runner.png" alt="Caf Runner" style="width:100%">
+            <div class="container">
+                <h4>Caf Runner<a href="https://github.com/mpughcs/CafRunner"><i class="fa-solid fa-link"></i></a></h4> 
+                <p>CafRunner is a 2D platformer game where the player controls a student who is trying to make it to the cafeteria before it closes  6:00 pm.</p> 
+            </div>
+        </div>
+        <!-- </a> -->
+        
+        
+      
+    </div>
     
-</body>
-  
-</html> 
+     
+    </body>
+</html>
