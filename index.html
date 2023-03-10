@@ -110,7 +110,7 @@
 /* Add some padding inside the card container */
 .container {
   padding: 2px 16px;
-  height: 90px;
+  height: min-content;
 }
 .card {
     /* width: clam (300px, 20%, 300px); */
@@ -124,6 +124,16 @@
     max-width: 450px;
     
 }
+
+span{
+  color: rgb(217, 109	,51);
+}
+span:hover{
+  color: rgb(108	164	248);	
+  /* transform:scale(1.1); */
+}
+
+
 .card h4{
     margin:0;
 }
@@ -477,11 +487,17 @@ div.flex-element.about p{
     .creator{
       color: #FF988A;
     }
+
+    /* All interactive elements can be accessed via the keyboard, and focused elements are visually distinguished. All critical information is conveyed both visually and through a screen reader. */
+    /*
  
 
+    */
 
 
 </style>
+
+
 
   </head>
   <body>
@@ -589,7 +605,7 @@ div.flex-element.about p{
             <img src="images/notation.png" alt="Notation" style="width:100%">
             <div class="container">
                 <h4>Notation CLI<a href="https://github.com/mpughcs/Notation"><i class="fa-solid fa-link"></i></a></h4> 
-                <p>Notation is a music application I am actively working on using Rust, Tauri, and python. 
+                <p>The command line prototype of Notation, for accessible music composition</p>
                 </p> 
                 
             </div>
